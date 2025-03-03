@@ -37,7 +37,7 @@ app.post("/register", async (req, res)=>{
     const {username, password} = req.body
     const registerQuery = `
     INSERT INTO mk_users (username, password) 
-    VALUES ("${username}", ${password});
+    VALUES ("${username}", "${password}");
     `
     await db.run(registerQuery)
     
