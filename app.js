@@ -91,7 +91,7 @@ app.post("/insert", async (req, res)=>{
     const {id, productName, quantity} = req.body 
     const insertQuery = `
     INSERT into mainstocks (id,product_name,quantity) 
-    VALUES(${id},${productName},${quantity});
+    VALUES(${id},'${productName}',${quantity});
     `
     await db.run(insertQuery);
     res.send("Succesfully data inserted");
